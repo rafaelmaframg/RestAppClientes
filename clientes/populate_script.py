@@ -9,6 +9,7 @@ import random
 from clientes.models import Cliente
 
 def criando_pessoas(quantidade_de_pessoas):
+    '''Function to populate the DB using the faker libary'''
     fake = Faker('pt_BR')
     Faker.seed(10)
     for _ in range(quantidade_de_pessoas):

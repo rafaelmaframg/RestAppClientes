@@ -8,6 +8,7 @@ class ClienteSerializer(serializers.ModelSerializer):
         model = Cliente
         fields = '__all__'
     def validate(self, data):
+        '''Create validation of fields'''
         if not cpf_valido(data['cpf']):
             raise serializers.ValidationError({'cpf':"Numero de Cpf Invalido"})
         if not nome_valido(data['nome']):
